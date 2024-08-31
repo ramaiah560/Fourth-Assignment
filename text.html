@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Bank Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="test.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Question Bank Management</h1>
+    </header>
+    <main>
+        <section id="search-filter">
+            <input type="text" id="searchBar" placeholder="Search questions...">
+            <div id="filters">
+                <label for="typeFilter">Type:</label>
+                <select id="typeFilter">
+                    <option value="">All</option>
+                    <option value="multipleChoice">Multiple Choice</option>
+                    <option value="shortAnswer">Short Answer</option>
+                    <option value="essay">Essay</option>
+                    <option value="trueFalse">True/False</option>
+                </select>
+                <label for="difficultyFilter">Difficulty:</label>
+                <select id="difficultyFilter">
+                    <option value="">All</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="">All</option>
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                </select>
+            </div>
+            <button id="addQuestionBtn">Add New Question</button>
+        </section>
+        <section id="questionList">
+            <h2>Question List</h2>
+            <ul id="questionsContainer">
+                <!-- Questions will be populated here -->
+            </ul>
+        </section>
+        <section id="import-export">
+            <button id="importBtn">Import Questions</button>
+            <button id="exportBtn">Export Questions</button>
+        </section>
+    </main>
+    <div id="questionCreationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Question</h2>
+            <form id="questionForm">
+                <label for="questionText">Question Text:</label>
+                <input type="text" id="questionText" name="questionText" required>
+
+                <label for="questionType">Question Type:</label>
+                <select id="questionType" name="questionType" required>
+                    <option value="multipleChoice">Multiple Choice</option>
+                    <option value="shortAnswer">Short Answer</option>
+                    <option value="essay">Essay</option>
+                    <option value="trueFalse">True/False</option>
+                </select>
+
+                <label for="questionDifficulty">Difficulty:</label>
+                <select id="questionDifficulty" name="questionDifficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <label for="questionCategory">Category:</label>
+                <select id="questionCategory" name="questionCategory" required>
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                </select>
+
+                <label for="questionTags">Tags (comma-separated):</label>
+                <input type="text" id="questionTags" name="questionTags">
+
+                <button type="submit">Save Question</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
